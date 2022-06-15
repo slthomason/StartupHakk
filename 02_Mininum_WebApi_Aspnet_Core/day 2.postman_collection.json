@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "eaf32bd3-d08c-4bed-9ba9-87dededccbf9",
+		"name": "day 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "258913"
+	},
+	"item": [
+		{
+			"name": "https://localhost:7260/todoitems",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"walk dog\",\r\n  \"isComplete\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7260/todoitems",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7260",
+					"path": [
+						"todoitems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7260/todoitems",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"walk dog\",\r\n  \"isComplete\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7260/todoitems",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7260",
+					"path": [
+						"todoitems"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
