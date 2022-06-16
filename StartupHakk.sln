@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Todo_App_WebApi_Aspnet_Core", "01_Todo_App_WebApi_Aspnet_Core\01_Todo_App_WebApi_Aspnet_Core.csproj", "{225C6DD3-2BB3-472C-8526-4871C7D122D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Mininum_WebApi_Aspnet_Core", "02_Mininum_WebApi_Aspnet_Core\02_Mininum_WebApi_Aspnet_Core.csproj", "{77B4A060-3DD5-4CEF-A3A2-2056C09175BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_Mininum_WebApi_Aspnet_Core", "02_Mininum_WebApi_Aspnet_Core\02_Mininum_WebApi_Aspnet_Core.csproj", "{77B4A060-3DD5-4CEF-A3A2-2056C09175BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_WebApi_With_MongoDB", "03_WebApi_With_MongoDB\03_WebApi_With_MongoDB.csproj", "{73FBE955-2029-4A7B-BFC2-BC43BF6C3A73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{77B4A060-3DD5-4CEF-A3A2-2056C09175BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77B4A060-3DD5-4CEF-A3A2-2056C09175BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77B4A060-3DD5-4CEF-A3A2-2056C09175BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73FBE955-2029-4A7B-BFC2-BC43BF6C3A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73FBE955-2029-4A7B-BFC2-BC43BF6C3A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73FBE955-2029-4A7B-BFC2-BC43BF6C3A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73FBE955-2029-4A7B-BFC2-BC43BF6C3A73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

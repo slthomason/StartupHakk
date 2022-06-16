@@ -1,0 +1,18 @@
+﻿Post Request json
+
+Request 1
+  {
+    "bookName": "Design Patterns",
+    "price": 54.93,
+    "category": "Computers",
+    "author": "Ralph Johnson"
+  }
+ 
+ Request 2
+
+  {
+    "bookName": "Clean Code",
+    "price": 43.15,
+    "category": "Computers",
+    "author": "Robert C. Martin"
+  }
