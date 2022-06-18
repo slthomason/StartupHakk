@@ -1,0 +1,6 @@
+﻿If app does not work, it might be cert issue.
+
+just open the cmd window and run following commands
+
+dotnet dev-certs https --clean
+dotnet dev-certs https --trust
