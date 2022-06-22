@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_Todo_App_WebApi_from_Js"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_SignalR_With_Javascript_Core", "05_SignalR_With_Javascript_Core\05_SignalR_With_Javascript_Core.csproj", "{7E29E273-0A6C-4470-A4BD-B2FD617D9E63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_SignalR_With_TypeScript_Core", "06_SignalR_With_TypeScript_Core\06_SignalR_With_TypeScript_Core.csproj", "{1438D31C-D124-457A-B085-794839CDE947}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_SignalR_With_TypeScript_Core", "06_SignalR_With_TypeScript_Core\06_SignalR_With_TypeScript_Core.csproj", "{1438D31C-D124-457A-B085-794839CDE947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_BlazorApp_SignalR_Core", "07_BlazorApp_SignalR_Core\07_BlazorApp_SignalR_Core.csproj", "{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{1438D31C-D124-457A-B085-794839CDE947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1438D31C-D124-457A-B085-794839CDE947}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1438D31C-D124-457A-B085-794839CDE947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
