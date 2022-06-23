@@ -1,0 +1,1 @@
+Run both of the projects -> Client as well as server.

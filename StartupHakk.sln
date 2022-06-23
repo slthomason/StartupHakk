@@ -15,7 +15,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_SignalR_With_Javascript_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_SignalR_With_TypeScript_Core", "06_SignalR_With_TypeScript_Core\06_SignalR_With_TypeScript_Core.csproj", "{1438D31C-D124-457A-B085-794839CDE947}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_BlazorApp_SignalR_Core", "07_BlazorApp_SignalR_Core\07_BlazorApp_SignalR_Core.csproj", "{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_BlazorApp_SignalR_Core", "07_BlazorApp_SignalR_Core\07_BlazorApp_SignalR_Core.csproj", "{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08_gRpc_AspNet_Core", "08_gRpc_AspNet_Core", "{B7E8219D-B9B4-4164-A87D-4C192EE2EBCF}"
+	ProjectSection(SolutionItems) = preProject
+		08_gRpc_AspNet_Core\Notes.txt = 08_gRpc_AspNet_Core\Notes.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC_Server", "08_gRpc_AspNet_Core\gRPC_Server\gRPC_Server.csproj", "{52E500BB-F979-4A6D-A264-86AE0410CC1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC_Client", "08_gRpc_AspNet_Core\gRPC_Client\gRPC_Client.csproj", "{61E42F44-963A-4B7E-A839-73372EE12B55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,9 +60,21 @@ Global
 		{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4993F3-4847-400E-AE5A-B3628A8E9EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E500BB-F979-4A6D-A264-86AE0410CC1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E500BB-F979-4A6D-A264-86AE0410CC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E500BB-F979-4A6D-A264-86AE0410CC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E500BB-F979-4A6D-A264-86AE0410CC1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61E42F44-963A-4B7E-A839-73372EE12B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E42F44-963A-4B7E-A839-73372EE12B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E42F44-963A-4B7E-A839-73372EE12B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E42F44-963A-4B7E-A839-73372EE12B55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{52E500BB-F979-4A6D-A264-86AE0410CC1E} = {B7E8219D-B9B4-4164-A87D-4C192EE2EBCF}
+		{61E42F44-963A-4B7E-A839-73372EE12B55} = {B7E8219D-B9B4-4164-A87D-4C192EE2EBCF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EDA3C251-B263-4F75-8542-E50949D689D6}
