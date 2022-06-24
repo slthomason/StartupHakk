@@ -22,9 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08_gRpc_AspNet_Core", "08_g
 		08_gRpc_AspNet_Core\Notes.txt = 08_gRpc_AspNet_Core\Notes.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC_Server", "08_gRpc_AspNet_Core\gRPC_Server\gRPC_Server.csproj", "{52E500BB-F979-4A6D-A264-86AE0410CC1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPC_Server", "08_gRpc_AspNet_Core\gRPC_Server\gRPC_Server.csproj", "{52E500BB-F979-4A6D-A264-86AE0410CC1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC_Client", "08_gRpc_AspNet_Core\gRPC_Client\gRPC_Client.csproj", "{61E42F44-963A-4B7E-A839-73372EE12B55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPC_Client", "08_gRpc_AspNet_Core\gRPC_Client\gRPC_Client.csproj", "{61E42F44-963A-4B7E-A839-73372EE12B55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Razor_Page_EF_Core_P1", "09_Razor_Page_EF_Core_P1\09_Razor_Page_EF_Core_P1.csproj", "{C3D1B653-59C7-427B-BD42-202336A9853D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +70,10 @@ Global
 		{61E42F44-963A-4B7E-A839-73372EE12B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61E42F44-963A-4B7E-A839-73372EE12B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61E42F44-963A-4B7E-A839-73372EE12B55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D1B653-59C7-427B-BD42-202336A9853D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D1B653-59C7-427B-BD42-202336A9853D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D1B653-59C7-427B-BD42-202336A9853D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D1B653-59C7-427B-BD42-202336A9853D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
