@@ -1,5 +1,14 @@
-﻿If app does not work, it might be cert issue.
+﻿To directly run this project, we need to install the dependency using NPM.
 
+if npm is not installed then download NODE.js @ https://nodejs.org/en/
+
+Now run the following command in the project root folder.
+
+npm i
+
+
+------------------------------------------------
+If app does not work, it might be cert issue.
 just open the cmd window and run following commands
 
 dotnet dev-certs https --clean
