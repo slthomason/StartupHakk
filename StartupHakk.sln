@@ -30,6 +30,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_Razor_Page_EF_Core_P1", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_Razor_Page_EF_Core_P2", "09_Razor_Page_EF_Core_P2\09_Razor_Page_EF_Core_P2.csproj", "{3A8C5404-295B-4A5B-B279-09498E74CAF2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_Razor_Page_EF_Core_P3", "09_Razor_Page_EF_Core_P3\09_Razor_Page_EF_Core_P3.csproj", "{6A823CA7-7BA3-476B-BF3C-591D80C4DBF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{3A8C5404-295B-4A5B-B279-09498E74CAF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A8C5404-295B-4A5B-B279-09498E74CAF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A8C5404-295B-4A5B-B279-09498E74CAF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A823CA7-7BA3-476B-BF3C-591D80C4DBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A823CA7-7BA3-476B-BF3C-591D80C4DBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A823CA7-7BA3-476B-BF3C-591D80C4DBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A823CA7-7BA3-476B-BF3C-591D80C4DBF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
