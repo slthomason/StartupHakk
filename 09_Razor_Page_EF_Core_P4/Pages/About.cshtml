@@ -1,0 +1,30 @@
+﻿@page
+@model _09_Razor_Page_EF_Core_P4.Pages.AboutModel
+@{
+     ViewData["Title"] = "Student Body Statistics";
+}
+
+<h2>Student Body Statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Enrollment Date
+        </th>
+        <th>
+            Students
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Students)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
