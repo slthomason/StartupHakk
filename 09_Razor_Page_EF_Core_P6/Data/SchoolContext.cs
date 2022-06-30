@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using _09_Razor_Page_EF_Core_P5.Models;
+using _09_Razor_Page_EF_Core_P6.Models;
 
-namespace _09_Razor_Page_EF_Core_P5.Data
+namespace _09_Razor_Page_EF_Core_P6.Data
 {
     public class SchoolContext : DbContext
     {
-        public SchoolContext (DbContextOptions<SchoolContext> options)
+        public SchoolContext(DbContextOptions<SchoolContext> options)
             : base(options)
         {
         }
@@ -25,9 +25,9 @@ namespace _09_Razor_Page_EF_Core_P5.Data
             modelBuilder.Entity<Student>().ToTable(nameof(Student));
             modelBuilder.Entity<Instructor>().ToTable(nameof(Instructor));
             modelBuilder.Entity<Department>()
-              .HasOne(d => d.Administrator)
-              .WithMany()
-              .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(d => d.Administrator)
+                .WithMany()
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
