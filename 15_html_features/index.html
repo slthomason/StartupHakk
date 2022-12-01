@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        blockquote {
+            background: #eee;
+            border-radius: 5px;
+            margin: 16px 0;
+        }
+
+        blockquote p {
+            padding: 15px;
+        }
+
+        cite {
+            margin: 16px 32px;
+            font-weight: bold;
+        }
+
+        blockquote p::before {
+            content: '\201C';
+        }
+
+        blockquote p::after {
+            content: '\201D';
+        }
+
+        [contenteditable='true'] {
+            caret-color: red;
+        }
+
+
+
+        details {
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            padding: .5em .5em 0;
+        }
+
+        summary {
+            font-weight: bold;
+            margin: -.5em -.5em 0;
+            padding: .5em;
+        }
+
+        details[open] {
+            padding: .5em;
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #aaa;
+            margin-bottom: .5em;
+        }
+
+        label {
+            font-family: "Fira Sans", sans-serif;
+        }
+
+
+        blockquote {
+            margin: 0;
+        }
+
+        blockquote p {
+            padding: 15px;
+            background: #eee;
+            border-radius: 5px;
+        }
+
+        blockquote p::before {
+            content: '\201C';
+        }
+
+        blockquote p::after {
+            content: '\201D';
+        }
+
+        abbr {
+            font-style: italic;
+            font-weight: 100;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Content Editable -->
+    <blockquote contenteditable="true">
+        <p>Edit this content to add your own quote</p>
+    </blockquote>
+
+    <cite contenteditable="true">-- Write your own name here</cite>
+
+
+
+    <!-- Details Tag -->
+    <details>
+        <summary>Details</summary>
+        Something small enough to escape casual notice.
+    </details>
+    
+    <br/>
+
+
+    <!-- Datalist -->
+
+    <label for="ice-cream-choice">Choose a flavor:</label>
+    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+
+    <datalist id="ice-cream-flavors">
+        <option value="Chocolate">
+        <option value="Coconut">
+        <option value="Mint">
+        <option value="Strawberry">
+        <option value="Vanilla">
+    </datalist>
+
+
+
+    <!-- Range -->
+    <p>Audio settings:</p>
+
+    <div>
+        <input type="range" id="volume" name="volume" min="0" max="11">
+        <label for="volume">Volume</label>
+    </div>
+
+    <div>
+        <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="90" step="5">
+        <label for="cowbell">Cowbell</label>
+    </div>
+
+
+    <!-- Meter -->
+
+    <label for="fuel">Fuel level:</label>
+
+    <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">
+        at 50/100
+    </meter>
+
+
+    <!-- Progress -->
+
+    <label for="file">File progress:</label>
+
+    <progress id="file" max="100" value="25"> 70% </progress>
+
+
+    <!-- Color picker -->
+
+    <p id="colorPicker">Color Picker!</p>
+    <input type="color">
+
+
+    <!-- Mark content -->
+
+    <p>Search results for "salamander":</p>
+
+    <hr>
+
+    <p>Several species of <mark>salamander</mark> inhabit the temperate rainforest of the Pacific Northwest.</p>
+
+    <p>Most <mark>salamander</mark>s are nocturnal, and hunt for insects, worms, and other small creatures.</p>
+
+
+
+    <!-- Blockquote & Cite -->
+
+    <figure>
+        <blockquote cite="https://www.huxley.net/bnw/four.html">
+            <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re
+                pierced.</p>
+        </blockquote>
+        <figcaption>—Aldous Huxley, <cite>Brave New World</cite></figcaption>
+    </figure>
+
+
+    <!-- Abbreviation -->
+
+
+    <p>You can use <abbr>CSS</abbr> (Cascading Style Sheets) to style your <abbr>HTML</abbr> (HyperText Markup
+        Language). Using style sheets, you can keep your <abbr>CSS</abbr> presentation layer and <abbr>HTML</abbr>
+        content layer separate. This is called "separation of concerns."</p>
+
+
+    <!-- <del> and <ins> -->
+    <p>You're late!</p>
+    <del>
+        <p>I apologize for the delay.</p>
+    </del>
+    <ins>
+        <p>A wizard is never late …</p>
+    </ins>
+
+
+    <!-- Output -->
+
+    <form oninput="x.value=parseInt(a.value) * parseInt(b.value)">
+        <input type="number" id="a" value="0"> * <input type="number" id="b" value="0">
+        = <output name="x" for="a b"></output>
+    </form>
+
+    <!-- Hidden -->
+
+    <div hidden>we can hide using different approaches such as using opacity:0, visibility:hidden, height:0; width:0,
+        display:none</div>
+
+    <!-- Time -->
+
+    <p>The next assemble meeting is postponed on <time datetime="2022-12-01">2022-12-01</time>.</p>
+
+    <!-- Audio -->
+    <audio controls>
+        <source src="Dubstep Epic (short).mp3" type="audio/mp3">
+        <source src="Dubstep Epic (short).wav" type="audio/wave">
+        Your browser does not support this audio
+    </audio>
+
+</body>
+
+</html>

@@ -69,7 +69,7 @@ namespace _09_Razor_Page_EF_Core_P3.Pages.Students
                     studentsIQ = studentsIQ.OrderBy(s => s.LastName);
                     break;
             }
-            var pageSize = _configuration.GetValue("PageSize", 4);
+            var pageSize = _configuration.GetValue("PageSize", 3);
             Students = await PaginatedList<Student>.CreateAsync(
                studentsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
         }
