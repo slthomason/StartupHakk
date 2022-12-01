@@ -42,6 +42,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_Razor_Page_EF_Core_P7", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_Mininum_WebApi_Xml_Output", "10_Mininum_WebApi_Xml_Output\10_Mininum_WebApi_Xml_Output.csproj", "{5848E4C3-34AA-4038-9B33-C6A5C5AC6899}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_fastest_collection_in_csharp", "fastest_collection_in_csharp\11_fastest_collection_in_csharp.csproj", "{C9C2077F-BAB8-4E6F-97D6-FC96F9BD9D14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -116,6 +118,10 @@ Global
 		{5848E4C3-34AA-4038-9B33-C6A5C5AC6899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5848E4C3-34AA-4038-9B33-C6A5C5AC6899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5848E4C3-34AA-4038-9B33-C6A5C5AC6899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C2077F-BAB8-4E6F-97D6-FC96F9BD9D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C2077F-BAB8-4E6F-97D6-FC96F9BD9D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C2077F-BAB8-4E6F-97D6-FC96F9BD9D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C2077F-BAB8-4E6F-97D6-FC96F9BD9D14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
