@@ -10,3 +10,4 @@ if(StartupHakk ==  null)
 
 //But now you can simplify things like this:
 throw new ArgumentNullException(StartupHakk,nameof(StartupHakk));
+ 

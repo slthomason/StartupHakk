@@ -5,5 +5,5 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews(options =>
 {
-    options.Filters.Add<RequestValidatorFilter>();
+    options.Filters.Add<RequestValidatorFilter>(); 
 });

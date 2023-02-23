@@ -15,6 +15,7 @@ public class VatValidatorAttribute : ValidationAttribute
             return false;
         }
 
-        return true;
+        return true; 
     }
 }
+ 

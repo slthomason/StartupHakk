@@ -17,9 +17,6 @@ public class Person
     public DateTime BirthDate { get; set; }
 
     [Required]
-    public int? VAT { get; set; }
-
-    [Required]
     public String? Address1 { get; set; }
     
     public String? Address2 { get; set; }
@@ -27,4 +24,4 @@ public class Person
     [Required]
     [VatValidator]
     public int? VAT { get; set; }
-}
+}  

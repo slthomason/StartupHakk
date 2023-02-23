@@ -1,6 +1,6 @@
 using System.Web.Http.Filters;
 public class RequestValidatorFilter : IActionFilter
-{
+{ 
     public void OnActionExecuted(ActionExecutedContext context)
     {
     }
@@ -12,4 +12,4 @@ public class RequestValidatorFilter : IActionFilter
             context.Result = new BadRequestObjectResult(context.ModelState);
         }
     }
-}
+} 
