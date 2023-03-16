@@ -2,7 +2,7 @@ public static class Class1
 {
     // "this" modifier to extend methods for the list object
     public static List<int> ReverseAndAddSumAsLastElement(this List<int> list)
-    {
+    { 
         list.Reverse();
         list.Add(list.Sum(s => Convert.ToInt32(s)));
         return list;
