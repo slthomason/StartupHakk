@@ -1,0 +1,60 @@
+
+/*User Select Property*/
+p{
+    user-select: none;
+   }
+
+/*The property place-items*/
+div{
+    place-items: center;
+   } 
+   /*The clip-path property*/
+      div{
+       clip-path: ellipse(25% 40% at 50% 50%);
+      }
+   
+   /*The CSS property object-fit*/
+      img{
+       object-fit: cover;
+      }
+
+   /*The property mix-blend-mode*/
+      .parent-element img{
+       position: absolute;
+     }
+     
+     .parent-element h1 { 
+       mix-blend-mode: overlay;
+     }
+   /*The property background-blend-mode*/
+     .element{
+       background: url("trees.png"), url("papers.png");
+       background-blend-mode: normal;
+      }
+   
+      .element{
+       background: url("trees.png"), url("papers.png");
+       background-blend-mode: overlay;
+      }
+   
+   /*The property resize*/
+      textarea{
+       resize: none;
+      }
+
+   /* Backface-visibility */
+      .element{
+       backface-visibility: hidden;
+      }
+      /*The smooth-scrolling property*/
+      html{
+       scroll-behavior: smooth;
+      }
+
+
+
+   
+   /*The caret color property*/
+      input{
+       caret-color: red;
+      }
