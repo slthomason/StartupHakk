@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.js"></script>
+<div class="text-center">
+    <h1>Real-Time Dashboard</h1>
+
+    <ul id="messageList"></ul>
+
+    <form id="messageForm">
+        <input type="text" id="messageInput" />
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/dashboarddhub").build();
+
+        connection.on("ReceiveMessage", function (user, message) {
+            // Handle received message
+            console.log("Received " + user + ": " + message);
+            $("#messageList").append("<li> " + message + "</li>");
+        });
+
+        connection.start().then(function () {
+            // Connection established
+            console.log("Connected to SignalR hub");
+            $("#messageForm").submit(function (event) {
+                event.preventDefault();
+                var message = $("#messageInput").val();
+                sendMessage('paul', message);
+                $("#messageInput").val("");
+            });
+        }).catch(function (err) {
+            console.error(err.toString());
+        });
+
+        function sendMessage(user, message) {
+            connection.invoke("SendMessage", user, message).catch(function (err) {
+                console.error(err.toString());
+            });
+        }
+    </script>
+</div>
+<body>
+
+</body>
+
