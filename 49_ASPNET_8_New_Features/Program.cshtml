@@ -1,0 +1,75 @@
+// Add this script tag to your Blazor Server project (wwwroot/index.html or wwwroot/_Host.cshtml)
+// This script is needed to enable the new Blazor Server-Side Rendering (SSR) feature in .NET 8
+// The 'suppress-error' attribute is used to ignore the specified build warning (BL9992) related to loading the script
+<script src="_framework/blazor.web.js" suppress-error="BL9992"></script>
+
+// Define page routing
+@page "/fetchdata"
+
+// Import required namespaces for the Blazor Server project
+@using BlazorSSR.Data
+@inject WeatherForecastService ForecastService
+// Enable server-side rendering for this Blazor component using the StreamRendering attribute
+@attribute [StreamRendering(true)]
+<PageTitle>Weather forecast</PageTitle>
+<h1>Weather forecast</h1>
+// Using conditional rendering to display the "Loading..." message while data is being fetched
+@if (forecasts is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    // Render weather forecasts when the data is available
+}
+@code {
+    private string message;
+    // Override the OnInitializedAsync method to fetch weather forecast data asynchronously
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
+    }
+}
+
+// Add this CascadingModelBinder component to your main layout (usually MainLayout.razor)
+// The CascadingModelBinder component is used to seamlessly deal with form posts in Blazor SSR (.NET 8)
+<CascadingModelBinder>
+    @Body
+</CascadingModelBinder>
+
+// Define a form using the EditForm component, and ensure to set the method attribute for correct form submission handling
+@inject FormDataProvider FormData
+
+<EditForm method="POST" Model="exampleModel" OnValidSubmit="HandleSubmit">
+    // Bind the Name property of the exampleModel object to the input field
+    <InputText @bind-Value="exampleModel.Name" />
+    // Add a submit button to trigger form submission
+    <button type="submit">Submit</button>
+</EditForm>
+@code {
+    // Instantiate an ExampleModel object
+    ExampleModel exampleModel = new();
+    protected override void OnInitialized()
+    {
+        // Manually model bind the form data using the FormDataProvider service
+        if (FormData.Entries.TryGetValue("Name", out var nameValues))
+        {
+            exampleModel.Name = nameValues.First();
+        }
+    }
+    void HandleSubmit()
+    {
+        // Handle the submitted form data
+    }
+    // Create a model class with the required properties (e.g., Name)
+    public class ExampleModel
+    {
+        public string? Name { get; set; }
+    }
+}
+
+// Add the WasmEnableWebcil property to your Blazor WebAssembly project file (e.g., .csproj)
+// This property enables the Webcil packaging feature, which eliminates issues related to blocked .dll file downloads
+<PropertyGroup>
+    <WasmEnableWebcil>true</WasmEnableWebcil>
+</PropertyGroup>
