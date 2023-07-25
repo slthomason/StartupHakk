@@ -4,30 +4,6 @@ public enum MyEnum {
      // another one here, or delete the previous ones
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public enum AddressType { 
     HOME(true),
     WORK(false),
