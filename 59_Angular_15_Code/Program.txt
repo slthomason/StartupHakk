@@ -1,0 +1,5 @@
+//Before
+<foo [input]="bar"></foo>
+
+//After
+<foo [input]="bar" />
