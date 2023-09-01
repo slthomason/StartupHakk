@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes vs. DOM Properties</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>HTML Attributes vs. DOM Properties</h1>
+<p>
+  The test below monitors the input field for changes, showing the differences between the following values:
+</p>
+<ul>
+  <li>HTMLInputElement.value</li>
+  <li>HTMLInputElement.defaultValue</li>
+  <li>HTMLInputElement.getAttribute("value")</li>
+  <li>HTMLInputElement.getAttribute("defaultValue")</li>
+</ul>
+<p>
+  It is important to know the difference as they do NOT return the same values. People use the term "attribute" for both when they flat out are not the same thing.
+</p>
+
+<label>
+    Change this value to test properties and attributes:<br>
+    <input id="test" value="100">
+</label>
+
+<table>
+  <caption>Current Values</caption>
+  <thead>
+    <tr>
+      <th scope="row">Name <span>&rArr;</span></th>
+      <th scope="col" rowspan="2"><code>value</code></th>
+      <th scope="col" rowspan="2"><code>defaultValue</code></th>
+    </tr><tr>
+      <th scope="col"><span>&dArr;</span> Method</th>
+    </tr>
+  </thead><tbody id="results">
+    <tr>
+      <th scope="row">HTMLInputElement Property</th>
+      <td id="propValue"></td>
+      <td id="propDefault"></td>
+    </tr><tr>
+      <th scope="row">HTMLInputElement.getAttribute</th>
+      <td id="getValue"></td>
+      <td id="getDefault"></td>
+    </tr>
+  </tbody>
+</table>
+<script type="text/javascript" src="index.js"></script>
+
+Note you COULD set a "defaultvalue" attribute in the markup, however that would not validate as there is no such attribute! In that case if the value="" and made up defaultvalue="" were different, .getAttribute("defaultvalue") would disagree with .defaultValue! The latter always being equal to the value attribute in the markup.
+</body>
+</html>
