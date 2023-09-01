@@ -58,7 +58,7 @@ body, table, input {
   }
   
   tbody tr > * {
-    backgroound:#DEF;
+    background:#DEF;
   }
   
   tbody tr:nth-child(even) > * {
