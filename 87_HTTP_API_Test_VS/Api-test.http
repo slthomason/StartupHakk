@@ -1,0 +1,36 @@
+GET https://localhost:7178/api/Products
+
+###
+
+@productId = 2
+GET https://localhost:7178/api/Products/{{productId}}
+
+###
+
+POST https://localhost:7178/api/Products
+Content-Type application/json
+
+{
+  "id": 3,
+  "productName": "Laptop",
+  "productDescription": "HP Pavilion",
+  "productPrice": 80000,
+  "productStock": 10
+}
+
+###
+
+PUT https://localhost:7178/api/Products
+Content-Type application/json
+
+{
+  "id": 3,
+  "productName": "Laptop",
+  "productDescription": "DELL",
+  "productPrice": 80000,
+  "productStock": 10
+}
+
+###
+
+DELETE https://localhost:7178/api/Products?productId=1ht
