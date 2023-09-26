@@ -1,0 +1,9 @@
+$body = @{
+    Topic = "item.new"
+    Message = @{
+        Name = "Some Item"
+        Price = "2.55"
+    }
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://localhost:5003/publish" -Method POST -Body $body -ContentType "application/json"
