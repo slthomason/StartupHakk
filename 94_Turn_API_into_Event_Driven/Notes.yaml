@@ -1,0 +1,9 @@
+name: Generate CloudFormation from OpenAPI spec
+  uses: allenheltondev/api-spec-to-api-destinations@v1
+  with:
+    specPath: path/to/openapi/spec.yaml
+    blueprint: path/to/template.yaml
+    environment: prod
+    httpMethods: POST,DELETE,PUT
+    resourcePrefix: MYAPP
+    outputFilename: template.yaml

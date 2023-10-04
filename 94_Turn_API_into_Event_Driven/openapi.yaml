@@ -1,0 +1,337 @@
+openapi: 3.0.0
+info:
+    title: Momento HTTP API
+    description: |
+      ## Welcome!
+
+      We're glad you're here. You probably want to get, set, and delete values from your Momento caches, right? Maybe you want to publish a message to a topic? Awesome, you're in the right place.
+
+      ## Authentication
+
+      Before getting started, be sure to visit the [Momento Console](https://console.gomomento.com) to obtain an API token. For security reasons, we recommend using scoped tokens with a short expiration. Details in the console!
+
+      ## Selecting a server
+
+      When creating your API token, you were required to select a region. The region you selected determines the base url (aka server) you need to use when making a call to the API. See the **servers** section for a mapping of regions to endpoints.
+
+      ## Quick tips
+
+      You can call these endpoints any way you like: `cUrl`, Postman, JavaScript fetch, [AWS EventBridge API destination](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html), you name it, you can do it. You can also call these in edge locations, like [Cloudflare Workers](https://workers.cloudflare.com/) or [Lambda@Edge](https://aws.amazon.com/lambda/edge/).
+
+      You can choose to provide your cache keys as plaintext or base64 encoded, but not both! Each endpoint accepts a `key` and a `key_base64` query string parameter. You must provide one, but not both of them.
+
+      Similarly, you can provide your auth token either in a `token` query string parameter or as an `Authorization` header. You are required to provide one, but not both of them.
+
+      If you get stuck, have questions, or would like to give us feedback, please [join us on Discord](https://discord.gg/3HkAKjUZGq). We'd love to hear from you!
+    version: 1.0.0
+
+servers:
+    - description: AWS us-east-1
+      url: https://api.cache.cell-us-east-1-1.prod.a.momentohq.com
+    - description: AWS us-west-2
+      url: https://api.cache.cell-4-us-west-2-1.prod.a.momentohq.com
+    - description: AWS ap-south-1
+      url: https://api.cache.cell-1-ap-south-1-1.prod.a.momentohq.com
+    - description: AWS ap-northeast-1
+      url: https://api.cache.cell-ap-northeast-1-1.prod.a.momentohq.com
+    - description: AWS eu-west-1
+      url: https://api.cache.cell-1-eu-west-1-1.prod.a.momentohq.com
+
+security:
+  - apiTokenQuery: []
+  - apiTokenHeader: []
+
+tags:
+  - name: Cache
+
+paths:
+  /cache/{cacheName}:
+    parameters:
+        - $ref: '#/components/parameters/cacheName'
+        - $ref: '#/components/parameters/key'
+        - $ref: '#/components/parameters/key_base64'
+    get:
+      description: Gets the value of a cache item. If the cache item exists, it will be returned in plaintext value back to you. You'll get your item exactly as you added it into the cache. If we can't find the cache item you're looking for, you will receive a `404 Not Found` indicating a cache miss.
+      operationId: cacheGet
+      summary: Get cache item value
+      tags:
+        - Cache
+      responses:
+        200:
+          description: The value of the cache item in raw format
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                example: Hello World!
+        400:
+          $ref: "#/components/responses/BadRequest"
+        401:
+          $ref: "#/components/responses/Unauthorized"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        429:
+          $ref: "#/components/responses/TooManyRequests"
+        500:
+          $ref: "#/components/responses/UnknownError"
+    put:
+      parameters:
+        - name: ttl_seconds
+          in: query
+          required: true
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 86400
+            description: The number of seconds to keep the item in the cache before it expires
+      description: |
+        Create or update an item in the cache. If an item with the provided key does not exist, it will be created. If the item *does* exist, it will be overwritten and the time to live (TTL) will be reset.
+      operationId: cacheSet
+      summary: Set cache item value
+      tags:
+        - Cache
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              example: my first cache set
+      responses:
+        204:
+          $ref: "#/components/responses/NoContent"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        401:
+          $ref: "#/components/responses/Unauthorized"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        429:
+          $ref: "#/components/responses/TooManyRequests"
+        500:
+          $ref: "#/components/responses/UnknownError"
+    delete:
+      description: Deletes an item from a specified cache. If the item is successfully deleted or is not found, a `204 No Content` response will be returned.
+      operationId: cacheDelete
+      summary: Delete cache item
+      tags:
+        - Cache
+      responses:
+        204:
+          $ref: "#/components/responses/NoContent"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        401:
+          $ref: "#/components/responses/Unauthorized"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        429:
+          $ref: "#/components/responses/TooManyRequests"
+        500:
+          $ref: "#/components/responses/UnknownError"
+
+  /topics/{cacheName}/{topicName}:
+    parameters:
+        - $ref: '#/components/parameters/cacheName'
+        - $ref: '#/components/parameters/topicName'
+    post:
+      description: |
+        Publish a value to a given topic. You can provide a string or binary data as the payload. This will send the payload to all subscribers of the provided topic.
+      operationId: topicPublish
+      summary: Publish data to a topic
+      tags:
+        - Topics
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              example: hello world!
+      responses:
+        204:
+          $ref: "#/components/responses/NoContent"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        401:
+          $ref: "#/components/responses/Unauthorized"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        429:
+          $ref: "#/components/responses/TooManyRequests"
+        500:
+          $ref: "#/components/responses/UnknownError"
+
+components:
+  parameters:
+    cacheName:
+      name: cacheName
+      in: path
+      required: true
+      description: Name of the cache to use. The cache must exist prior to making a request.
+      schema:
+        type: string
+        minLength: 1
+        example: myfirstcache
+    key:
+      name: key
+      in: query
+      required: false
+      description: Name of the plaintext cache key. Required if `key_base64` parameter is not provided.
+      schema:
+        type: string
+        minLength: 1
+    key_base64:
+      name: key_base64
+      in: query
+      required: false
+      description: Name of base64 encoded cache key. Required if `key` parameter is not provided.
+      schema:
+        type: string
+        minLength: 1
+    topicName:
+      name: topicName
+      in: path
+      required: true
+      description: Name of the topic to publish to.
+      schema:
+        type: string
+        minLength: 1
+        example: myfirstcache
+
+  responses:
+    NoContent:
+      description: The operation was successful and no information was returned
+    BadRequest:
+      description: Data provided by the caller is invalid
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: integer
+                example: 400
+              title:
+                type: string
+                enum:
+                  - Multiple Auth Tokens Specified
+                  - Multiple Keys Specified
+              description:
+                type: string
+                enum:
+                  - You must either set the 'authorization' header or the 'auth_token' query parameter, not both.
+                  - You must specify either 'key' or 'key_base64', not both.
+
+    NotFound:
+      description: The requested resource could not be found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                description: Status code of the response
+                example: 404
+              title:
+                type: string
+                description: Name of the error message
+                enum:
+                  - Key Not Found
+                  - Not Found
+              description:
+                type: string
+                description: Detail of the error message
+                enum:
+                  - The specified key was not present in the cache.
+                  - Cache not found
+    Unauthorized:
+      description: The auth token was not provided, invalid, or provided in too many locations
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 401
+              title:
+                type: string
+                enum:
+                  - No Auth Token Provided
+                  - Invalid authorization header format
+                  - Unauthorized
+              description:
+                type: string
+                enum:
+                  - Invalid authorization header format
+                  - Could not validate authorization header
+                  - You must provide a valid momento auth token via the 'authorization header' or the 'auth_token' query parameter.
+    Forbidden:
+      description: The auth token was valid, but does not have the privilege to perform the requested operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 403
+              title:
+                type: string
+                enum:
+                  - Forbidden
+              description:
+                type: string
+    TooManyRequests:
+      description: The call has exceeded the rate limit
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 429
+              title:
+                type: string
+                enum:
+                  - Resources Exhausted
+              description:
+                type: string
+    UnknownError:
+      description: An unknown error occurred
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 500
+              title:
+                type: string
+                enum:
+                  - Internal Server Error
+              description:
+                type: string
+
+  securitySchemes:
+    apiTokenQuery:
+      type: apiKey
+      in: query
+      name: token
+      description: Momento API token. Required if 'Authorization' header is not provided.
+    apiTokenHeader:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Momento API token. Required if 'token' query parameter is not provided.

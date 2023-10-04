@@ -1,0 +1,32 @@
+paths:
+  /players/{playerId}/injuries:
+    parameters:
+      - name: playerId
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      parameters:
+        - name: followUpDate
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+      operationId: Add Player Injury
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                injuryDate:
+                  type: string
+                  format: date
+              required:
+                - type
+                - injuryDate
