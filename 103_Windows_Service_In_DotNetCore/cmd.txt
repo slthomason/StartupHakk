@@ -1,0 +1,11 @@
+:: Create a Windows Service
+sc create DemoService DisplayName="Demo Service" binPath="C:\Users\Hp\Downloads\WindowsServiceDemo-master\WindowsServiceDemo-master\Demo\bin\Debug\net6.0\Demo.exe"
+
+:: Start a Windows Service
+sc start DemoService
+
+:: Stop a Windows Service
+sc stop DemoService
+
+:: Delete a Windows Service
+sc delete DemoService
