@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{YOUR-PROJECT-GUID}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YourProjectNamespace</RootNamespace>
+    <AssemblyName>YourProjectName</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Add your references here. An example to add System.Data.dll is shown -->
+    <Reference Include="System.Data" />
+    <!-- Add your source files here. An example to add Program.cs is shown -->
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
+
+
+
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+-   <TargetFramework>net48</TargetFramework>
++   <TargetFramework>net60</TargetFramework>
+    <OutputType>Exe</OutputType>
+</PropertyGroup>
+
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+-   <TargetFramework>netstandard2.0</TargetFramework>
++   <TargetFramework>net60</TargetFramework>
+  </PropertyGroup>
