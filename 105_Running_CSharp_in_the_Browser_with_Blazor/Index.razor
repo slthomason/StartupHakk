@@ -1,0 +1,34 @@
+@page "/counter"
+
+<h1>Ask the Eight Ball</h1>
+
+<p>It may not reveal the future of Blazor and WebAssembly. But it can't hurt to try.</p>
+<input type="text" />
+<button class="btn btn-primary" @onclick="AskEightBall">Ask the Eight Ball</button>
+ <h1>@answer</h1>
+
+@code {
+    // The value to bind in the HTML.
+    string answer;
+    // Handling the click event.
+     void  AskEightBall()
+    {
+        // Dramatic delay time.
+         System.Threading.Thread.Sleep(TimeSpan.FromSeconds(5));
+        // Display the answer.
+        
+       answer = GetRandomAnswer();
+    }
+    string[] answers = new string[]{
+"Ask Again later","Can Not Predict Now","Without a Doubt",
+"Is Decidely So","Concentrate and Ask Again","My Sources Say No",
+"Yes, Definitely","Don't Count On It","Signs Point to Yes",
+"Better Not Tell You Now","Outlook Not So Good","Most Likely",
+"Very Doubtful","As I See It, Yes","My Reply is No","It Is Certain",
+"Yes","You May Rely On It","Outlook Good","Reply Hazy Try Again"};
+    string GetRandomAnswer()
+    {
+        Random rnd = new Random();
+        return answers[rnd.Next(0, answers.Length)];
+    }
+}
