@@ -1,0 +1,29 @@
+<form action="/upload" class="dropzone"></form>
+<script 
+src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js">
+</script>
+
+
+<form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" id="fileInput" name="file" />
+    <button type="submit">Upload</button>
+  </form>
+  
+  <script>
+    document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("file", document.getElementById("fileInput").files[0]);
+  
+      const response = await fetch("/api/upload/file", {
+        method: "POST",
+        body: formData,
+      });
+  
+      if (response.ok) {
+        console.log("File uploaded successfully.");
+      } else {
+        console.error(`Error uploading file: ${response.status}`);
+      }
+    });
+  </script>
