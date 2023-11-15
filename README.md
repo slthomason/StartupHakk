@@ -12,7 +12,9 @@ What is different from us and other Coding Bootcamps?
 
 So check out https://StartupHakk.com, and hit the Contact Us link and we can work out a deal to get you started today!
 
-NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE *
+NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE
+
 This is our old code repo.  It got too big so we started a 2nd repo.  Go check out the new repo (and the videos)
 https://github.com/slthomason/StartupHakkSamples
-NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE *
+
+NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE * NOTE
