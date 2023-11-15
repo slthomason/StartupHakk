@@ -11,3 +11,8 @@ What is different from us and other Coding Bootcamps?
 3) We are the best value!  You won't find anyone cheaper than us - and that is still considering the above!
 
 So check out https://StartupHakk.com, and hit the Contact Us link and we can work out a deal to get you started today!
+
+*************NOTE************
+This is our old code repo.  It got too big so we started a 2nd repo.  Go check out the new repo (and the videos)
+https://github.com/slthomason/StartupHakkSamples
+*************NOTE************
